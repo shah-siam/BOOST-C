@@ -4,11 +4,11 @@
 void sort_string(char str[]) {      // function for sorting
     int len = strlen(str);
     for (int i = 0; i < len - 1; i++) {
-        for (int j = i + 1; j < len; j++) {
-            if (str[i] > str[j]) {
-                char temp = str[i];
-                str[i] = str[j];
-                str[j] = temp;
+        for (int j = 0; j < len-i-1; j++) {
+            if (str[j] > str[j+1]) {
+                char temp = str[j];
+                str[j] = str[j+1];
+                str[j+1] = temp;
             }
         }
     }
@@ -32,7 +32,7 @@ int main() {
 
     to_lowercase(str1);   // lowercase
     to_lowercase(str2);
- 
+
     sort_string(str1);    // short
     sort_string(str2);
 
